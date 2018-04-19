@@ -11,7 +11,7 @@ const app = express();
 // Connect to mlab database
 mongoose.connect(`mongodb://${process.env.DB_NAME}:${process.env.DB_PASS}@ds147589.mlab.com:47589/chanon-gql`);
 mongoose.connection.once('open', () => {
-    console.log(emoji.get('key') + chalk.greenBright("  Connected to Database"));
+    console.log(emoji.get('key') + chalk.blue("  Connected to Database"));
 });
 
 app.use('/graphql', graphqlHTTP({
