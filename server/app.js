@@ -2,11 +2,15 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const chalk = require('chalk');
 const emoji = require('node-emoji');
 
 require('dotenv').config();
 const app = express();
+
+// Allow Cross-Origin Requests
+app.use(cors());
 
 // Connect to mlab database
 mongoose.connect(`mongodb://${process.env.DB_NAME}:${process.env.DB_PASS}@ds147589.mlab.com:47589/chanon-gql`);
