@@ -17,6 +17,7 @@ class App extends Component {
         <div className="main">
           <h1> Reading List </h1>
           <BookList />
+          <AddBook />
         </div>
       </ApolloProvider>
     )
